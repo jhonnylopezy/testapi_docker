@@ -4,5 +4,5 @@ services:
     image: nick1104/testapi:1.0.0
     ports:
       - 4000:3000
-    volumes:
-      - D:\PROYECTOS\Pruebas\testapi_docker:/app
+    # volumes:
+      # - D:\PROYECTOS\Pruebas\testapi_docker:/app
