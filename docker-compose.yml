@@ -1,7 +1,7 @@
 version: "3.9" 
 services:
   app:
-    image: testapi
+    image: nick1104/testapi:1.0.1
     ports:
       - 4000:3000
     volumes:

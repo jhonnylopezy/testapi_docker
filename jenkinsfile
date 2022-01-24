@@ -1,0 +1,21 @@
+node{
+    stage('SCM checkout'){
+        git branch: 'develop', url: 'https://github.com/jhonnylopezy/testapi_docker.git'
+
+    }   
+    stage('Build Docker image'){
+       bat 'docker build -t nick1104/testapi:1.0.0 .'
+    }
+    stage('Push Docker image'){
+       withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+          bat "docker login -u nick1104 -p ${dockerHubPwd}"
+        }
+        
+       bat 'docker push nick1104/testapi:1.0.0'
+    }
+    stage('Run container on dev'){
+        
+       bat 'docker-compose up -d'
+    }
+    
+}

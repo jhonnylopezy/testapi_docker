@@ -7,7 +7,7 @@ router.get('/', async (rep, res) => {
         // var resultConnect= await connectDB.userDemo();
         // console.log("resultConnect: ",resultConnect);
         res.json({
-            message: 'Hello Jhonny'
+            message: 'Hello Jhonny Lopez Yapu'
         })
     }catch(e){
       console.log(e.message);
